@@ -74,7 +74,7 @@
 							
 							<form>
 								<div class="top-margin">
-									<label>Email <span class="text-danger">*</span></label>
+									<label>Pseudo <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
 								<div class="top-margin">
