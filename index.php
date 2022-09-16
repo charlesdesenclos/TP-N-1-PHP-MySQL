@@ -45,7 +45,7 @@
 		<div class="container">
 			<div class="row">
 				<h1 class="lead">Bienvenue pour le site</h1>
-				<p class="tagline">hellllllo</P>
+				<p class="tagline">hellllllo langkalce</P>
 				<p><a class="btn btn-default btn-lg" role="button">Clique pour voir </a> <a class="btn btn-action btn-lg" role="button">GPS</a></p>
 			</div>
 		</div>
