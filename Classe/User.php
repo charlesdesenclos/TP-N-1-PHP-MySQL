@@ -10,7 +10,6 @@ class User
     {
         $this->id_ = $Newid;
         $this->pseudo_ = $Newpseudo;
-        $this-> email_ = $Newemail;
            
            
     }
