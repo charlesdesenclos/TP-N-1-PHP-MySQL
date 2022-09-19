@@ -6,8 +6,9 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>
-		Site GPS
+	<title>  
+		po
+		Site GPS langlace
 	</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
@@ -28,12 +29,12 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="index.php"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="#">Home</a></li>
-					<li class="active"><a class="btn" href="signin.html">Connexions / Déconnexions</a></li>
+					<li class="active"><a class="btn" href="signin.php">Connexions / Déconnexions</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -45,7 +46,7 @@
 		<div class="container">
 			<div class="row">
 				<h1 class="lead">Bienvenue pour le site</h1>
-				<p class="tagline">hellllllo langkalce</P>
+				<p class="tagline">hellllllo e</P>
 				<p><a class="btn btn-default btn-lg" role="button">Clique pour voir </a> <a class="btn btn-action btn-lg" role="button">GPS</a></p>
 			</div>
 		</div>
