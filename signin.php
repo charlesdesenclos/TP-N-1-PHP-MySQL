@@ -26,6 +26,9 @@
 </head>
 
 <body>
+<?php
+        require_once 'pdo.php'; //connexion bdd 
+    ?>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
@@ -59,7 +62,33 @@
 		</ol>
 
 		<div class="row">
-			
+		<?php
+
+			include("./Classe/User.php");
+
+			$TheUser = new User(null,null,null);
+			if(isset($_POST['connexion']))
+			{
+				$TheUser->inscription($_POST['pseudo'],$_POST['password']);
+				
+
+				if ($comptevalide == true)
+				{
+					header('Location: connexion.php'); // On redirige vers la page de connexion
+					die();
+				}
+				else if($comptevalide == false)
+				{?>
+					<div id="container">
+						<?php echo "Compte déja existant";?>
+					</div>
+					<?php
+				}    
+			}
+
+
+			?>
+
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
@@ -89,7 +118,7 @@
 										<b><a href="">Forgot password?</a></b>
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Sign in</button>
+										<button class="btn btn-action" type="submit" name="connexion">Sign in</button>
 									</div>
 								</div>
 							</form>
