@@ -61,31 +61,15 @@
 		</ol>
 
 		<div class="row">
-		<?php
+		<?php 
 
 			include("./Classe/User.php");
 
 			$TheUser = new User(null,null,null);
 			if(isset($_POST['connexion']))
 			{
-				$TheUser->inscription($_POST['pseudo'],$_POST['password']);
-				
-
-				if ($comptevalide == true)
-				{
-					header('Location: connexion.php'); // On redirige vers la page de connexion
-					die();
-				}
-				else if($comptevalide == false)
-				{?>
-					<div id="container">
-						<?php echo "Compte déja existant";?>
-					</div>
-					<?php
-				}    
+				$TheUser->connection($_POST['pseudo'],$_POST['password']);
 			}
-
-
 			?>
 
 			<!-- Article main content -->

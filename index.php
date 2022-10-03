@@ -34,7 +34,8 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="#">Home</a></li>
-					<li class="active"><a class="btn" href="signin.php">Connexions / Déconnexions</a></li>
+					<li class="active">
+					<a class="btn" href="signin.php">Connexions / Déconnexions</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
