@@ -13,7 +13,7 @@ class User
            
            
     }
-
+    //permet de se connecter avec connection
     public function connection($pseudo,$password)
         {
             $RequetSQL = "SELECT * FROM utilisateurs WHERE pseudo ='".$pseudo."' AND password = '".$password."'";
@@ -37,7 +37,7 @@ class User
             }
 
         }
-
+        //s'occuper de déconnecter l'utilisateurs
         public function deconnexion()
         {
             session_start(); // demarrage de la session
@@ -45,6 +45,8 @@ class User
             header('Location: index.php'); // On redirige
             die();
         }
+
+        // inscription permet de s'inscrire
 
         public function inscription($pseudo, $password)
         {
@@ -69,7 +71,7 @@ class User
             
         }
 
-    
+        
 
 
         // Modification_User permet de modifier les utilisateurs
