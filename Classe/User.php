@@ -68,6 +68,38 @@ class User
             }
             
         }
+
+    
+
+
+        // Modification_User permet de modifier les utilisateurs
+        public Modification_user($pseudo, $password)
+        {
+            $requeteuser = $this->_BDD->prepare("SELECT * FROM utilisateurs WHERE pseudo = ?");
+            $requeteuser->execute(array($login));
+            $userExist = $requeteuser->rowCount();
+            if ($userExist != 1) {
+                if ($mdp == $confmdp) {
+                    $req = "UPDATE utilisateurs SET pseudo = '".$pseudo."', password = '".$password."'";
+                    $this->_BDD->query($req);
+                    header("Location:admin.php");
+                    return "modification réussite";
+                } else {
+                    return "Le Mots de passe n'est pas le même";
+                }
+            } else if ($this->_login == $login) {
+                if ($mdp == $confmdp) {
+                    $req = "UPDATE utilisateurs SET pseudo = '".$pseudo."', password = '".$password."'";
+                    $this->_BDD->query($req);
+                    header("Location:admin.php");
+                    return "modification réussite";
+                } else {
+                    return "Le Mots de passe n'est pas le même";
+                }
+            } else {
+                return "Se login est déja utiliser par une autre personne";
+            }
+        }
 }
 
 
