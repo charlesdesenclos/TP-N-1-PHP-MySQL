@@ -1,3 +1,14 @@
+<?php
+	session_start();
+	include("./Classe/User.php");
+	$TheUser = new User(null,null);
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,12 +74,23 @@
 		<div class="row">
 		<?php 
 
-			include("./Classe/User.php");
+			
 
-			$TheUser = new User(null,null,null);
+			
 			if(isset($_POST['connexion']))
 			{
+
+				echo $_POST['pseudo'],$_POST['password'];
 				$TheUser->connection($_POST['pseudo'],$_POST['password']);
+				if($_SESSION['connectionValide'] == true)
+				{
+					header('Location: gps.php'); // On redirige vers la page de connexion
+                    die();
+				}
+				else if ($_SESSION['connectionValide'] != false)
+				{
+					echo "problème login ou mdp faux";
+				}
 			}
 			?>
 
@@ -87,11 +109,11 @@
 							<form>
 								<div class="top-margin">
 									<label>Pseudo <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" name="pseudo"class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Mot de passe <span class="text-danger">*</span></label>
-									<input type="password" class="form-control">
+									<input type="password"  name="password"class="form-control">
 								</div>
 
 								<hr>

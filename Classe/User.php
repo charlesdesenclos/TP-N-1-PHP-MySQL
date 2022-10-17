@@ -16,15 +16,17 @@ class User
     //permet de se connecter avec connection
     public function connection($pseudo,$password)
         {
-            $RequetSQL = "SELECT * FROM utilisateurs WHERE pseudo ='".$pseudo."' AND password = '".$password."'";
+            $RequetSQL = "SELECT * FROM user WHERE pseudo ='".$pseudo."' AND password = '".$password."'";
             $resultat = $GLOBALS['bdd'] -> query($RequetSQL);
-            
+           
             if ( $resultat-> rowCount() > 0 )
             {
                 echo"Vous êtes connectés";
                 $_SESSION['Connexion'] = true;
                 echo $_SESSION['pseudo'] = $pseudo;
                 $_SESSION['connectionValide'] = true;
+
+                
                
                 return true;
 
@@ -73,15 +75,16 @@ class User
 
         
 
-
+/*
         // Modification_User permet de modifier les utilisateurs
-        public Modification_user($pseudo, $password)
+        public function Modification_user($pseudo, $password)
         {
+            
             $requeteuser = $this->_BDD->prepare("SELECT * FROM utilisateurs WHERE pseudo = ?");
-            $requeteuser->execute(array($login));
+            $requeteuser->execute(array($pseudo));
             $userExist = $requeteuser->rowCount();
             if ($userExist != 1) {
-                if ($mdp == $confmdp) {
+                if ($password == $confmdp) {
                     $req = "UPDATE utilisateurs SET pseudo = '".$pseudo."', password = '".$password."'";
                     $this->_BDD->query($req);
                     header("Location:admin.php");
@@ -89,8 +92,8 @@ class User
                 } else {
                     return "Le Mots de passe n'est pas le même";
                 }
-            } else if ($this->_login == $login) {
-                if ($mdp == $confmdp) {
+            } else if ($this->_login == $pseudo) {
+                if ($password == $confmdp) {
                     $req = "UPDATE utilisateurs SET pseudo = '".$pseudo."', password = '".$password."'";
                     $this->_BDD->query($req);
                     header("Location:admin.php");
@@ -101,7 +104,7 @@ class User
             } else {
                 return "Se login est déja utiliser par une autre personne";
             }
-        }
+        }*/
 }
 
 
